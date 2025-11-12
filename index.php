@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RÍO ACHICHILCO 🌊</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lobster&display=swap" rel="stylesheet" />
+
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: linear-gradient(135deg, #E0F7FA, #E8F5E9);
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+  }
+
+  /* Menú */
+  .menu {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(6px);
+    border: 2px solid #00695c33;
+    border-radius: 12px;
+    padding: 10px 18px;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    animation: fadeIn 1s ease-in;
+  }
+  .menu ul {
+    list-style: none;
+    display: flex;
+    gap: 14px;
+  }
+  .menu ul li a {
+    text-decoration: none;
+    color: #004d40;
+    font-weight: 600;
+    padding: 8px 14px;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+  }
+  .menu ul li a:hover {
+    background-color: #009688;
+    color: #fff;
+    transform: scale(1.1);
+  }
+
+  /* Banner */
+  header.banner {
+    background: linear-gradient(120deg, #A5D6A7, #81D4FA);
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px 40px;
+    box-shadow: inset 0 -6px 12px rgba(0,0,0,0.1);
+    animation: fadeIn 1s ease-in;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Efecto de olas */
+  header.banner::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 100px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 100%;
+    animation: wave 6s infinite linear;
+  }
+
+  /* Título con brillo */
+  header.banner h1 {
+    color: #004d40;
+    font-family: 'Lobster', cursive;
+    font-size: 4rem;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+    position: relative;
+    animation: float 3s ease-in-out infinite alternate, shine 5s linear infinite;
+    background: linear-gradient(90deg, #004d40, #26a69a, #4fc3f7, #004d40);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 300%;
+  }
+
+  header.banner img {
+    max-height: 300px;
+    width: auto;
+    border-radius: 15px;
+    border: 4px solid #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    animation: pop 1.2s ease;
+  }
+
+  /* Mensaje */
+  .banner-message {
+    margin: 40px auto;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: #004d40;
+    background: #ffffffcc;
+    padding: 15px 30px;
+    border-radius: 10px;
+    width: fit-content;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    animation: pulse 3s infinite;
+  }
+
+  /* Botones */
+  .botones {
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  .botones button {
+    background: linear-gradient(135deg, #26a69a, #4fc3f7);
+    border: none;
+    border-radius: 10px;
+    padding: 14px 32px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeUp 1.5s ease;
+  }
+  .botones button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  }
+  .botones button a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: block;
+  }
+
+  /* Sección de información */
+  .info {
+    max-width: 900px;
+    margin: 60px auto;
+    text-align: center;
+    background: #ffffffb0;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+    line-height: 1.8;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+  }
+  .info.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .info h2 {
+    color: #00796b;
+    margin-bottom: 20px;
+  }
+
+  /* Animaciones */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes float {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+  }
+
+  @keyframes shine {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes pulse {
+    0% { box-shadow: 0 0 5px #00968855; }
+    50% { box-shadow: 0 0 20px #00968899; }
+    100% { box-shadow: 0 0 5px #00968855; }
+  }
+
+  @keyframes pop {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes wave {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    header.banner {
+      flex-direction: column;
+      text-align: center;
+      height: auto;
+    }
+    header.banner h1 {
+      font-size: 2.8rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <nav class="menu">
+    <ul>
+  
+      <li><a href="historia.php">Historia</a></li>
+      <li><a href="ubicacion.php">Ubicación</a></li>
+      <li><a href="pagina secundaria.php">Galeria</a></li>
+      <li><a href="cuidados.php">Cuidados</a></li>
+      <li><a href="contacto.php">Contacto</a></li>
+      <li><a href="contaminacion.php">contaminacion</a></li>
+    </ul>
+  </nav>
+
+  <header class="banner">
+    <h1>RÍO ACHICHILCO 🌊</h1>
+    <img src="imagenes/rio_achichilco.jpg" alt="Río Achichilco" />
+  </header>
+
+  <div class="banner-message">
+    ¡Descubre la belleza natural del Río Achichilco! 💚
+  </div>
+
+  <div class="info">
+    <h2>Sobre el Río Achichilco</h2>
+    <p>
+    El río Achichilco era un hermoso afluente rodeado de naturaleza, vegetación y fauna local. Sus aguas cristalinas y paisajes verdes lo convertían en un destino perfecto para quienes buscaban tranquilidad y contacto con la naturaleza. Además, era un lugar importante para la comunidad, ya que representaba una fuente de vida, historia y tradición. Pero eso era antes, ya que en la actualidad está contaminado y lleno de residuos y basura.Pero eso era antes ya que en la actualidad esta contaminado y lleno de residuos y basura.
+    </p>
+ 
+   <script>
+    // Efecto al hacer scroll: las secciones aparecen suavemente
+    const infos = document.querySelectorAll('.info');
+    window.addEventListener('scroll', () => {
+      infos.forEach(info => {
+        const rect = info.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          info.classList.add('visible');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

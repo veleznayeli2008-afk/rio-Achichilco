@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galería - río Achichilco</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lobster&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(135deg, #a8d8ff, #b8e1f5, #c7ecfa);
+      background-attachment: fixed;
+      font-family: 'Poppins', sans-serif;
+      color: #00334e;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Menú */
+    .menu {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      border-radius: 12px;
+      padding: 12px 20px;
+      z-index: 1000;
+      animation: fadeInDown 1s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .menu ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+
+    .menu ul li a {
+      text-decoration: none;
+      color: #004d73;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .menu ul li a:hover {
+      background-color: rgba(255, 255, 255, 0.6);
+      color: #006a8e;
+      transform: scale(1.05);
+    }
+
+    /* Banner */
+    header.banner {
+      background: linear-gradient(135deg, rgba(160, 220, 255, 0.7), rgba(190, 235, 255, 0.7));
+      height: 55vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 0 40px;
+      box-shadow: inset 0 -4px 6px rgba(0,0,0,0.15);
+      animation: fadeIn 1.5s ease;
+    }
+
+    header.banner h1 {
+      color: #004d73;
+      font-family: 'Lobster', cursive;
+      font-size: 3.5rem;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    header.banner img {
+      max-height: 260px;
+      width: auto;
+      border-radius: 15px;
+      border: 3px solid #fff;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      animation: float 3s ease-in-out infinite alternate;
+    }
+
+    /* Contenido */
+    .contenido {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 20px;
+      animation: fadeInUp 1.2s ease;
+    }
+
+    .contenido h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #004d73;
+      margin-bottom: 40px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    }
+
+    .grid-rio {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 35px 20px;
+      justify-content: center;
+    }
+
+    .zona {
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      overflow: hidden;
+      text-align: center;
+      padding: 10px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInCard 1s forwards;
+    }
+
+    .zona:nth-child(odd) { animation-delay: 0.3s; }
+    .zona:nth-child(even) { animation-delay: 0.6s; }
+
+    .zona img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid #fff;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .zona img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 18px rgba(0, 80, 120, 0.4);
+    }
+
+    .zona h3 {
+      margin-top: 12px;
+      color: #003f5c;
+      font-weight: 700;
+      font-size: 1.4rem;
+    }
+
+    .zona p {
+      margin-top: 6px;
+      color: #00334e;
+      font-size: 1rem;
+      padding: 0 10px;
+    }
+
+    /* Animaciones */
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes float { from { transform: translateY(0); } to { transform: translateY(-8px); } }
+    @keyframes fadeInCard { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Responsive */
+    @media (max-width: 850px) {
+      header.banner {
+        flex-direction: column;
+        height: auto;
+        padding: 30px 20px;
+        gap: 20px;
+      }
+
+      header.banner h1 {
+        font-size: 2.8rem;
+        text-align: center;
+      }
+
+      .grid-rio {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Menú -->
+  <nav class="menu">
+    <ul>
+      <li><a href="index.php">Inicio</a></li>
+      <li><a href="historia.php">Historia</a></li>
+      <li><a href="ubicacion.php">Ubicación</a></li>
+      <li><a href="cuidados.php">Cuidados</a></li>
+      <li><a href="contacto.php">Contacto</a></li>
+      <li><a href="contaminacion.php">Contaminación</a></li>
+    </ul>
+  </nav>
+
+  <!-- Banner -->
+  <header class="banner">
+    <h1>Galería</h1>
+    <img src="imagenes/rio_achichilco.jpg" alt="Río Achichilco" />
+  </header>
+
+  <!-- Contenido -->
+  <section class="contenido">
+    <h2>Río Achichilco</h2>
+
+    <div class="grid-rio">
+      <article class="zona">
+        <img src="imagenes/rio_3.jpg" alt="Río y vegetación">
+      </article>
+
+      <article class="zona">
+        <img src="imagenes/rio_2.jpg" alt="Río y fauna local">
+      </article>
+
+      <article class="zona">
+        <img src="imagenes/rio_4.jpg" alt="Contaminación del río">
+      </article>
+
+      <article class="zona">
+        <img src="imagenes/rio_5.jpg" alt="Limpieza del río">
+      </article>
+
+      <article class="zona">
+        <img src="imagenes/rio_6.jpg" alt="Paisaje natural del río">
+      </article>
+
+      <article class="zona">
+        <img src="imagenes/rio_7.jpg" alt="Fauna y entorno del río">
+      </article>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Historia del Río Achichilco</title>
+
+  <!-- Fuente bonita -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lobster&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #00334e;
+      line-height: 1.7;
+      background: linear-gradient(135deg, #a8d8ff, #b8e1f5, #c7ecfa);
+      overflow-x: hidden;
+      background-attachment: fixed;
+    }
+
+    /* Menú */
+    .menu {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      border-radius: 12px;
+      padding: 12px 20px;
+      z-index: 1000;
+      animation: fadeInDown 1s ease;
+    }
+
+    .menu ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+
+    .menu ul li a {
+      text-decoration: none;
+      color: #004d73;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: 0.3s ease;
+    }
+
+    .menu ul li a:hover {
+      background-color: rgba(255, 255, 255, 0.6);
+      color: #006a8e;
+      transform: scale(1.05);
+    }
+
+    /* Encabezado */
+    header {
+      text-align: center;
+      padding: 80px 20px 40px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    header h1 {
+      font-family: 'Lobster', cursive;
+      font-size: 3.5rem;
+      color: #004d73;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    }
+
+    /* Contenido */
+    .contenido {
+      max-width: 900px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      animation: fadeInUp 1.2s ease;
+    }
+
+    .contenido h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #004d73;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .contenido p {
+      text-align: justify;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      color: #00334e;
+    }
+
+    /* Animaciones */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.8rem;
+      }
+
+      .contenido {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menú -->
+  <nav class="menu">
+    <ul>
+      <li><a href="index.php">Inicio</a></li>
+      <li><a href="ubicacion.php">Ubicación</a></li>
+      <li><a href="cuidados.php">Cuidados</a></li>
+      <li><a href="contaminacion.php">Contaminación</a></li>
+      <li><a href="contacto.php">Contacto</a></li>
+      <li><a href="pagina secundaria.php">Galería</a></li>
+    </ul>
+  </nav>
+
+  <!-- Título -->
+  <header>
+    <h1>Historia del Río Achichilco</h1>
+  </header>
+
+  <!-- Contenido -->
+  <section class="contenido">
+    <h2>🏞️🌿 Un río con historia</h2>
+    <p>
+      El Río Achichilco es uno de los afluentes más representativos de Ixtlahuacán del Río, Jalisco (México). Su nombre proviene del náhuatl “Achichilco”, que significa “lugar de agua roja” o “agua teñida”, en referencia al tono que, en ciertas temporadas, toma el cauce debido a los minerales del suelo y las lluvias.
+    </p>
+    <p>
+      Desde tiempos antiguos, este río ha sido un punto vital para las comunidades locales, sirviendo como fuente de agua para el riego, el consumo doméstico y la ganadería. También ha sido un espacio de encuentro y convivencia, donde generaciones enteras han disfrutado de sus paisajes, su vegetación y su frescura durante los días calurosos.
+    </p>
+    <p>
+      A lo largo de su historia, el Achichilco ha sido considerado un símbolo natural del municipio, un reflejo de la conexión entre el ser humano y la naturaleza. Sin embargo, en los últimos años ha enfrentado problemas de contaminación provocados por desechos urbanos y aguas residuales, lo que ha afectado su pureza y la vida silvestre que habita en sus alrededores.
+    </p>
+    <p>
+      Actualmente, existen iniciativas comunitarias y escolares dedicadas a rescatar y cuidar este río. Su objetivo es fomentar la conciencia ecológica, la educación ambiental y la responsabilidad compartida, para devolverle su esplendor original y conservarlo como un tesoro natural de Ixtlahuacán del Río para las futuras generaciones.
+    </p>
+  </section>
+
+</body>
+</html>

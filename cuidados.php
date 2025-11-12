@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cuidados del río Achichilco 💧</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lobster&display=swap" rel="stylesheet">
+
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #4fc3f7, #0288d1);
+    color: #fff;
+    overflow-x: hidden;
+  }
+
+  /* Menú */
+  .menu {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.3);
+    padding: 12px 20px;
+    border-radius: 10px;
+    z-index: 1000;
+  }
+
+  .menu ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+
+  .menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-shadow: 2px 2px 3px #000;
+    transition: all 0.3s ease;
+  }
+
+  .menu ul li a:hover {
+    color: #fff;
+    text-shadow: 0 0 8px #fff, 2px 2px 3px #000;
+    transform: scale(1.1);
+  }
+
+  /* Banner */
+  header.banner {
+    background: linear-gradient(135deg, #29b6f6, #0288d1);
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  header.banner h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px #000;
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from { text-shadow: 2px 2px 4px #000, 0 0 5px #fff; }
+    to { text-shadow: 2px 2px 4px #000, 0 0 15px #fff; }
+  }
+
+  header.banner img {
+    max-width: 300px;
+    border-radius: 12px;
+    border: 3px solid #fff;
+    margin-top: 20px;
+  }
+
+  /* Contenido */
+  .contenido {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+
+  .contenido h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px #000;
+  }
+
+  .grid-cuidados {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  .cuidados {
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .cuidados:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  }
+
+  .cuidados img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  .cuidados h3 {
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px #000;
+    margin-bottom: 10px;
+  }
+
+  .cuidados p {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-shadow: 1px 1px 2px #000;
+  }
+
+  /* Responsive */
+  @media (max-width: 850px) {
+    .grid-cuidados {
+      grid-template-columns: 1fr;
+    }
+
+    header.banner h1 {
+      font-size: 2.2rem;
+    }
+
+    header.banner img {
+      max-width: 80%;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+  <!-- Menú -->
+  <nav class="menu">
+    <ul>
+      <li><a href="index.php">Inicio</a></li>
+      <li><a href="historia.php">Historia</a></li>
+      <li><a href="ubicacion.php">Ubicación</a></li>
+      <li><a href="contacto.php">Contacto</a></li>
+      <li><a href="contaminacion.php">contaminacion</a></li>
+      <li><a href="pagina secundaria.php">Galeria</a></li>
+    </ul>
+  </nav>
+
+  <!-- Banner -->
+  <header class="banner">
+    <h1>Cuidados del río Achichilco 💧</h1>
+      </header>
+
+  <!-- Contenido -->
+  <section class="contenido">
+    <h2>💡 Cómo proteger el río</h2>
+    <div class="grid-cuidados">
+      
+      <div class="cuidados">
+        <img src="imagenes/no-basura.jpg" alt="No tirar basura">
+        <h3>🚯 No tirar basura</h3>
+        <p>No dejes plásticos ni residuos cerca del río, ayuda a mantener sus aguas limpias.</p>
+      </div>
+
+      <div class="cuidados">
+        <img src="imagenes/limpieza.jpg" alt="Participar en limpieza">
+        <h3>🧹 Participa en limpiezas</h3>
+        <p>Únete a campañas de limpieza comunitaria para ayudar a restaurar el río.</p>
+      </div>
+
+      <div class="cuidados">
+        <img src="imagenes/reciclaje.jpg" alt="Reciclar">
+        <h3>♻️ Recicla y reutiliza</h3>
+        <p>Promueve el reciclaje y el uso responsable de materiales para reducir contaminación.</p>
+      </div>
+
+      <div class="cuidados">
+        <img src="imagenes/educacion.jpg" alt="Educar a otros">
+        <h3>📚 Educa a otros</h3>
+        <p>Enseña a familiares y amigos sobre la importancia de cuidar nuestros ríos y la naturaleza.</p>
+      </div>
+
+      <div class="cuidados">
+        <img src="imagenes/no-quimicos.jpg" alt="No usar químicos">
+        <h3>⚠️ Evita químicos</h3>
+        <p>No arrojes detergentes, pesticidas ni productos químicos al río para proteger la vida acuática.</p>
+      </div>
+
+      <div class="cuidados">
+        <img src="imagenes/plantar-arbol.jpg" alt="Plantar árboles">
+        <h3>🌳 Planta árboles</h3>
+        <p>Plantar vegetación cerca del río ayuda a prevenir la erosión y mejora el hábitat de especies locales.</p>
+      </div>
+
+     
+
+    </div>
+  </section>
+
+</body>
+</html>

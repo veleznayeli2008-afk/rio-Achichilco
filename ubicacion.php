@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ubicación río Achichilco</title>
+<style>
+  /* Fondo degradado azul bajito animado */
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #A7C7E7, #BEE3F8, #A0C4FF, #B5EAEA);
+    color: #033E5A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-size: 400% 400%;
+    animation: gradientAnim 15s ease infinite;
+  }
+
+  @keyframes gradientAnim {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+
+  /* Menú moderno con tonos azules claros */
+  nav.menu {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+  }
+
+  nav.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav.menu ul li a {
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #BEE3F8, #A7C7E7);
+    color: #033E5A;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 0 5px rgba(0,0,0,0.15);
+  }
+
+  nav.menu ul li a:hover {
+    background-position: right center;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255,255,255,0.6);
+  }
+
+  /* Título azul hielo, fácil de leer */
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #E3F2FD;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  }
+
+  p {
+    margin-bottom: 30px;
+    max-width: 600px;
+    color: #E8F8FF;
+  }
+
+  /* Botón con degradado azul pastel e icono */
+  button {
+    background: linear-gradient(45deg, #5BC0EB, #6DD5FA, #B2FEFA);
+    border: 2px solid #fff;
+    color: #004466;
+    padding: 16px 32px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.7);
+    background-size: 200% 200%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  button:hover {
+    background-position: right center;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #fff;
+  }
+
+  /* Icono de ubicación dentro del botón */
+  button .icono {
+    font-size: 1.4rem;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- Menú -->
+<nav class="menu">
+  <ul>
+    <li><a href="index.php">Inicio</a></li>
+    <li><a href="historia.php">Historia</a></li>
+    <li><a href="cuidados.php">Cuidados</a></li>
+    <li><a href="contaminacion.php">Contaminación</a></li>
+    <li><a href="contacto.php">Contacto</a></li>    
+    <li><a href="pagina secundaria.php">Galería</a></li>
+  </ul>
+</nav>
+
+<!-- Título -->
+<h1>UBICACIÓN</h1>
+
+<p>Haz clic en el botón para ir directamente al Río Achichilco junto a la Preparatoria CECYTEJ, Ixtlahuacán del Río, Jalisco.</p>
+
+<!-- Botón con icono -->
+<button onclick="window.open('https://www.google.com/maps/place/CECyTEJ+08+Ixtlahuac%C3%A1n+del+R%C3%ADo/@20.8676819,-103.2655178,13.98z/data=!4m6!3m5!1s0x8428b9356acab0a3:0x3da9d15152e97be1!8m2!3d20.859127!4d-103.2419355!16s%2Fg%2F1vd3w38h?entry=ttu')">
+  <span class="icono">📍</span> Ir a la ubicación
+</button>
+
+</body>
+</html>
