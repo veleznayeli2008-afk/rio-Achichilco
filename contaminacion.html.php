@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contaminación del Río Achichilco</title>
+
+<!-- Fuente bonita -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lobster&display=swap" rel="stylesheet" />
+
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    line-height: 1.7;
+    background: linear-gradient(135deg, #a8d8ff, #7cc9f5, #5ab5e7, #8fd3f4);
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-size: 400% 400%;
+    animation: gradientAnim 15s ease infinite;
+  }
+
+  @keyframes gradientAnim {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+
+  /* Menú */
+  .menu {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    border-radius: 12px;
+    padding: 12px 20px;
+    z-index: 1000;
+    animation: fadeInDown 1s ease;
+  }
+
+  .menu ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+
+  .menu ul li a {
+    text-decoration: none;
+    color: #f0fbff;
+    font-weight: 600;
+    padding: 6px 12px;
+    transition: 0.3s ease;
+    border-radius: 6px;
+  }
+
+  .menu ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+  }
+
+  /* Título */
+  h1 {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    font-family: 'Lobster', cursive;
+    font-size: 3rem;
+    color: #e3f7ff;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+  }
+
+  /* Contenido */
+  .contaminacion {
+    max-width: 900px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    color: #fff;
+  }
+
+  .contaminacion h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #dff6ff;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+  }
+
+  .contaminacion ul {
+    list-style: disc inside;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: left;
+  }
+
+  .contaminacion ul li strong {
+    color: #e2f4ff;
+  }
+
+  /* Sección de imágenes */
+  .imagenes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+
+  .imagenes img {
+    width: 300px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .imagenes img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  }
+
+  /* Animaciones */
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<!-- Menú -->
+<nav class="menu">
+  <ul>
+    <li><a href="index.php">Inicio</a></li>
+    <li><a href="historia.php">Historia</a></li>
+    <li><a href="ubicacion.php">Ubicación</a></li>
+    <li><a href="cuidados.php">Cuidados</a></li>
+    <li><a href="contacto.php">Contacto</a></li>
+    <li><a href="pagina secundaria.php">Galería</a></li>
+  </ul>
+</nav>
+
+<h1>Contaminación del Río Achichilco</h1>
+
+<section class="contaminacion">
+
+  <h2>Principales causas 🌊</h2>
+  <ul>
+    <li><strong>Desechos domésticos y urbanos:</strong> Casas cercanas vierten aguas negras al río, incluyendo jabón, detergentes y excremento.</li>
+    <li><strong>Contaminación industrial:</strong> Talleres o pequeñas industrias vierten químicos y residuos que afectan la calidad del agua.</li>
+    <li><strong>Agricultura y pesticidas:</strong> Fertilizantes y pesticidas llegan al río por lluvia o riego, alterando el ecosistema acuático.</li>
+    <li><strong>Desechos sólidos:</strong> Plásticos, bolsas y basura bloquean el flujo de agua y afectan a los animales.</li>
+    <li><strong>Erosión y sedimentos:</strong> Lluvias arrastran tierra y sedimentos, aumentando la turbidez y cambiando el color del agua.</li>
+    <li><strong>Falta de conciencia ambiental:</strong> Las personas no siempre disponen adecuadamente sus residuos, aumentando la contaminación.</li>
+  </ul>
+
+  <!-- Imágenes pequeñas abajo -->
+  <div class="imagenes">
+    <img src="imagenes/arbol1.jpg" alt="Árbol cerca del río Achichilco">
+    <img src="imagenes/arbol2.jpg" alt="Naturaleza del río Achichilco">
+  </div>
+
+</section>
+
+</body>
+</html>
